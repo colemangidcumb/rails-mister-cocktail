@@ -1,0 +1,13 @@
+<div class="conatainer d-flex justify-content-center">
+<div class="conatainer col-10 justify-content-center d-flex-inline text-center shadow bg-light rounded ">
+<h1>Here are all the cocktail options</h1>
+<div>
+<% @cocktails.each do |cocktail| %>
+  <ul>
+  <li><%= link_to cocktail.name, cocktail_path(cocktail) %></li>
+  </ul>
+  <% end %>
+  <%= link_to "Create a new cocktail", new_cocktail_path %>
+</div>
+</div>
+</div>
