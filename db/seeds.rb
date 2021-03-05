@@ -20,6 +20,3 @@ ingredients.each do |ingredient|
   Ingredient.create(name: ingredient['strIngredient1'])
   puts "created #{ingredient['strIngredient1']}"
 end
-Cocktail.create(name: 'old fashioned')
-Cocktail.create(name: 'martini')
-Cocktail.create(name: 'fuzzy navel')
