@@ -1,5 +1,9 @@
 <div class="conatainer  d-flex bg-dark justify-content-center w-100">
 <div class="cards bg-secondary col-10">
+<%= cl_image_tag("c_thumb,w_200,g_face/v1614942832/khcw0cnrznginzjcgofe.jpg",
+      width: 400, height: 300, crop: :fill) %>
+
+
 <% @cocktails.each do |cocktail| %>
   <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://source.unsplash.com/user/erondu/1600x900)">
     <%= link_to cocktail.name, cocktail_path(cocktail), class: "btn btn-ghost" %>
