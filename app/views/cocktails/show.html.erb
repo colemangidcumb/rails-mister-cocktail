@@ -1,4 +1,20 @@
-<div class="conatainer col-6 text-center shadow bg-light rounded ">
+
+
+
+
 <h1><%= @cocktail.name %></h1>
-<p>YUM!!!</p>
+
+<div class="cards">
+<% @cocktail.doses.each do |dose| %>
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://source.unsplash.com/user/erondu/1600x900)">
+<%= dose.description %> |  <%=dose.ingredient.name %>
+<div>
+<%= link_to "Delete",  destroy_path(dose), method: :delete%>
 </div>
+  </div>
+<% end %>
+</div>
+<%= link_to "Whats in this drink?",  new_cocktail_dose_path(@cocktail), class: "btn btn-sm btn-secondary mt-4" %>
+<%= link_to "Back to drinks list",  cocktails_path, class: "btn btn-sm btn-secondary mt-4" %>
+
+<%# https://source.unsplash.com/user/erondu/1600x900 %>
