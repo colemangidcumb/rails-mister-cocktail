@@ -4,4 +4,5 @@ Rails.application.routes.draw do
     resources :doses, only: %w[new create]
   end
   delete 'doses/:id', to: 'doses#destroy', as: :destroy
+  get 'gotcha', to: 'cocktails#gotcha'
 end
