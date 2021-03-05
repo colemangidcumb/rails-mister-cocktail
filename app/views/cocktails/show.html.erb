@@ -3,12 +3,12 @@
 
 
 <h1><%= @cocktail.name %></h1>
-
+<% if @cocktail.photo.attached? %> 
 <%= cl_image_tag @cocktail.photo.key, height: 300, width: 400, crop: :fill %>
-
+<% end %>
 <div class="cards">
 <% @cocktail.doses.each do |dose| %>
-  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path @article.photo.key, height: 300, crop: :fill %>')">
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://source.unsplash.com/user/erondu/1600x900')">
 <%= dose.description %> |  <%=dose.ingredient.name %>
 <div>
 <%= link_to "Delete",  destroy_path(dose), method: :delete%>
@@ -21,4 +21,4 @@
 
 <%# https://source.unsplash.com/user/erondu/1600x900 %>
 
-<%= cl_image_tag @article.photo.key, height: 300, width: 400, crop: :fill %>
+<%# <%= cl_image_tag @article.photo.key, height: 300, width: 400, crop: :fill %> %>
