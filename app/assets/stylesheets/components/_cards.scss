@@ -2,6 +2,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 16px;
+  background-size: cover;
 }
 
 // Smallest device
@@ -41,7 +42,7 @@
 
 .card-category {
   background-size: cover;
-  background-position: center;
+  background-position: top;
   height: 180px;
   display: flex;
   justify-content: center;
