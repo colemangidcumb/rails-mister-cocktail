@@ -1,0 +1,32 @@
+.banner {
+  background-size: cover;
+  background-position: top;
+  padding: 200px 0;
+}
+
+.banner h1 {
+  margin: 0;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-size: 32px;
+  font-weight: bold;
+  font-family: 'Roboto', sans-serif;
+}
+
+.banner p {
+  font-size: 20px;
+  color: white;
+  opacity: .7;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-family: 'Roboto', sans-serif;
+}
+html, body {
+  position: relative;
+  min-height: 100vh;
+}
+body {
+  padding-bottom: 3.5rem;
+}
+.content {
+  flex: 1 0 auto;
+}
