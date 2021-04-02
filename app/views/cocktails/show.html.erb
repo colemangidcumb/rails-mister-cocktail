@@ -1,36 +1,35 @@
-
-
-
-<div class="container mt-3 d-flex-inline bg-dark justify-content-center w-100">
- <% if @cocktail.photo.attached? %> 
-  <div class="card-category w-50%" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path @cocktail.photo.key, height: 600, crop: :fill %>')">
-    <%= link_to @cocktail.name, cocktail_path(@cocktail), class: "btn btn-ghost" %>
-  </div>
+<div class="container mt-3 d-flex-inline justify-content-center w-100">
+  <% if @cocktail.photo.attached? %> 
+    <div class="card-category w-50%" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path @cocktail.photo.key, height: 600, crop: :fill %>')">
+      <%= link_to @cocktail.name, cocktail_path(@cocktail), class: "btn btn-ghost" %>
+    </div>
   <% else %> 
     <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://hhp-blog.s3.amazonaws.com/2018/08/iStock-611986658.jpg)">
-    <%= link_to @cocktail.name, cocktail_path(@cocktail), class: "btn btn-ghost" %>
-  </div>
+      <%= link_to @cocktail.name, cocktail_path(@cocktail), class: "btn btn-ghost" %>
+    </div>
   <% end %>
-<div class="d-flex justify-content-center flex-row">
-<div class="cards bg-none d-flex flex-row">
-<% @cocktail.doses.each do |dose| %>
-  <div class="card-category d-flex flex-column">
-  <div>
-    <%= dose.description %> |  <%=dose.ingredient.name %>
-  </div>
-  <div>
-    <%= link_to destroy_path(dose), method: :delete do %>
-      <i class="fas fa-minus-circle"></i>
+  <div class="d-flex justify-content-center flex-row">
+    <div class="cards bg-none d-flex flex-row">
+    <% @cocktail.doses.each do |dose| %>
+      <div class="card-category d-flex flex-column">
+        <div>
+          <%= dose.description %> |  <%=dose.ingredient.name %>
+        </div>
+          <div>
+            <%= link_to destroy_path(dose), method: :delete do %>
+              <i class="fas fa-trash-alt"></i>
+            <% end %>
+          </div>
+        </div>
+      </div>
     <% end %>
+    </div>
+      <div class="d-flex-inline m-3">
+        <%= link_to "Whats in this drink?",  new_cocktail_dose_path(@cocktail), class: "btn btn-sm btn-secondary mt-4" %>
+        <%= link_to "Back to drinks list",  cocktails_path, class: "btn btn-sm btn-secondary mt-4" %>
+      </div>
+    </div>
   </div>
-  </div>
-<% end %>
-</div>
-</div>
-<div class="d-flex-inline m-3">
-<%= link_to "Whats in this drink?",  new_cocktail_dose_path(@cocktail), class: "btn btn-sm btn-secondary mt-4" %>
-<%= link_to "Back to drinks list",  cocktails_path, class: "btn btn-sm btn-secondary mt-4" %>
-</div>
 </div>
 
 <%# https://source.unsplash.com/user/erondu/1600x900 %>
