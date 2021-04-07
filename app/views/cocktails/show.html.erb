@@ -1,7 +1,6 @@
-<div class="container mt-3 d-flex-inline justify-content-center w-100">
+<div class="container mt-5 w-50">
   <% if @cocktail.photo.attached? %> 
     <div class="card-category w-50%" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path @cocktail.photo.key, height: 600, crop: :fill %>')">
-      <%= link_to @cocktail.name, cocktail_path(@cocktail), class: "btn btn-ghost" %>
     </div>
   <% else %> 
     <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://hhp-blog.s3.amazonaws.com/2018/08/iStock-611986658.jpg)">
@@ -31,7 +30,3 @@
     </div>
   </div>
 </div>
-
-<%# https://source.unsplash.com/user/erondu/1600x900 %>
-
-<%# <%= cl_image_tag @article.photo.key, height: 300, width: 400, crop: :fill %>
