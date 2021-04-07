@@ -106,3 +106,44 @@
 .form-card-content {
   padding: 4px 8px;
 }
+.cocktail-card {
+  width: 800px;
+  height: 500px;
+  margin-top: 90px;
+  background-color: white;
+}
+.card-image {
+  width: 400px;
+  margin-top: 24px;
+}
+
+.show-card-category {
+  background-size: cover;
+  background-position: top;
+  height: 95%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+.ingredient-text {
+  color: gray;
+  font-weight: bold;
+}
+.ingredients {
+  margin-top: 34px;
+  margin-left: 16px;
+  h2 {
+    color: gray;
+    font-weight: bolder;
+    font-size: 48px;
+  }
+}
+.show-card-info {
+  position: relative;
+}
